@@ -14,6 +14,11 @@ class UserController extends Controller
         return view('login');
     }
 
+    public function index()
+    {
+        return view('home');
+    }
+
     /**
      * Handle an authentication attempt.
      */
@@ -25,9 +30,8 @@ class UserController extends Controller
         ]);
 
         if (Auth::attempt($credentials)) {
-            // $request->session()->regenerate();
-            // return redirect()->intended('dashboard');
-            dd('Logou');
+            $request->session()->regenerate();
+            return redirect()->intended('home');
         }else{
             dd("Não Logou");
         }
