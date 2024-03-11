@@ -8,4 +8,24 @@ use Illuminate\Database\Eloquent\Model;
 class Consultation extends Model
 {
     use HasFactory;
+
+    protected $table = "consultation";
+
+    protected $fillable = [
+        'data',
+        'patient_id',
+        'doctor_id'
+    ];
+
+    public $timestamps = false;
+
+    public function sick()
+    {
+        return $this->belongsTo(Patient::class);
+    }
+
+    public function doctor()
+    {
+        return $this->belongsTo(Doctor::class);
+    }
 }
