@@ -19,7 +19,7 @@ class Consultation extends Model
 
     public $timestamps = false;
 
-    public function sick()
+    public function patient()
     {
         return $this->belongsTo(Patient::class);
     }

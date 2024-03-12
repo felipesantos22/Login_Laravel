@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('age');
             $table->string('city');
-            $table->string('passport')->unique();
+            $table->string('cpf')->unique();
             $table->timestamps();
         });
     }
